@@ -30,8 +30,8 @@ def render_progressbar(total, iteration, prefix='', suffix='', length=30, fill='
 
 
 if __name__ == '__main__':
-    TOKEN = os.getenv('TG_TOKEN')
     load_dotenv()
+    TOKEN = os.getenv('TG_TOKEN')
     bot = ptbot.Bot(TOKEN)
     bot.reply_on_message(reply)
     bot.run_bot()
