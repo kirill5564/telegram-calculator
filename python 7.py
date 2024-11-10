@@ -5,6 +5,9 @@ from pytimeparse import parse
 from dotenv import load_dotenv
 
 
+TOKEN = os.getenv('TG_TOKEN')
+
+
 def reply(chat_id, text):
     message_id = bot.send_message(chat_id, text)
     bot.create_countdown(parse(text), notify, chat_id=chat_id, message_id=message_id, text=text)
@@ -31,7 +34,6 @@ def render_progressbar(total, iteration, prefix='', suffix='', length=30, fill='
 
 if __name__ == '__main__':
     load_dotenv()
-    TOKEN = os.getenv('TG_TOKEN')
     bot = ptbot.Bot(TOKEN)
     bot.reply_on_message(reply)
     bot.run_bot()
