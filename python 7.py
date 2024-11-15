@@ -5,6 +5,7 @@ from pytimeparse import parse
 from dotenv import load_dotenv
 
 
+load_dotenv()
 TOKEN = os.getenv('TG_TOKEN')
 
 
@@ -33,7 +34,6 @@ def render_progressbar(total, iteration, prefix='', suffix='', length=30, fill='
 
 
 if __name__ == '__main__':
-    load_dotenv()
     bot = ptbot.Bot(TOKEN)
     bot.reply_on_message(reply)
     bot.run_bot()
